@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="./styles/apps.css">
 </head>
 <body>
-    <h1 class="bg-info bg-gradient text-white text-center p-4 ">Task Manager</h1>
+    <h1 class="text-white text-center p-4">Task Manager</h1>
     <main class="">
-        <section id="list" class="bg-dark-subtle">
+        <section id="list" class="">
             <h2>To-Do List:</h2>
         </section>
-        <section id="form" class="bg-info bg-gradient">
+        <section id="form" class="">
             <div class="mb-3">
                 <label  class="form-label" for="">Title</label>  
                 <input class="form-control" type="text" id="txtTitle">
@@ -23,12 +23,18 @@
                 <textarea id="txtDescription" class="form-control" rows="3"></textarea>
             </div>
             <div class="mb-3">
-                <label class="form-label">Color</label>
-                <input class="form-control" id="selColor" type="color">
+                <label class="form-label">Priority Level</label>
+                <select class="form-control" id="selColor">
+                    <option value="" disabled selected>Choose One...</option>
+                    <option value="#b03a2e">High</option>
+                    <option value="#b7950b">Medium</option>
+                    <option value="#148f77">Low</option>
+                </select>
+                <!--<input class="form-control" id="selColor" type="color">-->
             </div>
             <div class="mb-3">
                 <label  class="form-label" for="">Start Date</label>  
-                <input class="form-control" type="datetime-local" name="" id="selDate">
+                <input class="form-control" type="date" name="" id="selDate">
             </div>
             <div class="mb-3">
                 <label  class="form-label" for="">Status</label>  

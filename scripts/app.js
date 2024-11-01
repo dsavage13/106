@@ -45,7 +45,12 @@ function displayTask(taskToSave){
 
 function clearForm(){
     console.log("clear form");
-    // need jquery function to clear the value
+    $("#txtTitle").val("");
+    $("#txtDescription").val("");
+    $("#selColor").val("");
+    $("#selDate").val("");
+    $("#selStatus").val("");
+    $("#numBudget").val("");
 }
 
 function init(){

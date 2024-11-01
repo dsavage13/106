@@ -9,12 +9,18 @@ main{
     gap: 20px;
 }
 
+h1{
+    background-color: #5a9fa3;
+}
+
+
 #list{
     border-radius: 12px;
     flex: 3;
     transition: all .3s ease;
     padding: 20px;
-    border-left: 4px solid rgb(47, 144, 169);
+    border-left: 4px solid #5a9fa3;
+    background-color: #f6f6f6;
 }
 
 #list:hover{
@@ -25,8 +31,9 @@ main{
     padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 98, 255, 0.1);
-    border-left: 4px solid rgb(47, 144, 169);
+    border-left: 4px solid #5a9fa3;
     flex: 2;
+    background-color: #f6f6f6;
 }
 
 .form-control, .form-select{
