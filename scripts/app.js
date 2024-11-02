@@ -14,11 +14,47 @@ function saveTask(){
 
     displayTask(taskToSave);
     clearForm();
+
     //save to server (POST)
 
-    // display the task (Get)
+    $.ajax({
+        type: "POST",
+        url: "http://fsdiapi.azurewebsites.net/api/tasks/",
+        data: JSON.stringify(taskToSave),
+        contentType: "application/json",
+        success: function(response){
+            console.log(response);
+        },
+        error: function(error){
+            console.log(error);
+        },
 
+    })
 }
+    // display the task (Get)
+    function loadTask(){
+        $.ajax({
+            type: "GET",
+            url: "http://fsdiapi.azurewebsites.net/api/tasks",
+            success: function(response){
+                let data = JSON.parse(response);
+                //create the logic to retrieve only the messages 
+                //that match with your name
+                for(let i = 0; i<data.length;i++){
+                    let task = data[i];
+                    if(task.name == "Damian"){
+                        console.log(task);
+                        displayTask(task);
+                    }
+                }
+
+            },
+            error: function (error){
+                console.log(error);
+            },
+        })
+    }
+
 
 function displayTask(taskToSave){
     let syntax = `
@@ -53,10 +89,25 @@ function clearForm(){
     $("#numBudget").val("");
 }
 
+function testRequest(){
+    $.ajax({
+        type: "GET", 
+        url: "http://fsdiapi.azurewebsites.net",
+        success: function(response){
+            let data = JSON.parse(response);
+            console.log(data);
+        },
+        error: function(error){
+            console.log(error);
+        },
+    })
+}
+
 function init(){
     console.log("init");
     $("#btnSave").click(saveTask);
     $("#btnClear").click(clearForm);
+    loadTask();
 }
 
 
